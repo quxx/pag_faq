@@ -35,6 +35,9 @@ export const faqGroups = [
           <strong>Samstag:</strong> 12:45 Uhr<br>
           <strong>Sonntag:</strong> 14:45 Uhr<br><br>
 
+          Sinnvoll wäre außerdem eine Anreise nach Vetschau/Spreewald am Samstag zu 11:30 Uhr. Dann könnt ihr euch uns bei Bauer Ricken anschließen.
+          <br><br>
+
           Für weitere Mitfahrgelegenheiten könnt ihr euch einfach in der WhatsApp-Gruppe austauschen.
         </p>`,
       },
