@@ -157,6 +157,76 @@ if (sticker && stickerTilt && precisePointer.matches && !reducedMotion.matches) 
   });
 }
 
+if (sticker && stickerTilt && !reducedMotion.matches && "DeviceMotionEvent" in window) {
+  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+  let lastMotion;
+  let lastShakeAt = 0;
+  let resetShakeTimer;
+  let permissionRequested = false;
+
+  const resetShake = () => {
+    sticker.classList.remove("is-device-shaking");
+    stickerTilt.style.removeProperty("--shake-x");
+    stickerTilt.style.removeProperty("--shake-y");
+    stickerTilt.style.removeProperty("--shake-rotate");
+  };
+
+  const handleDeviceMotion = (event) => {
+    const acceleration = event.accelerationIncludingGravity || event.acceleration;
+    if (!acceleration) return;
+
+    const motion = {
+      x: acceleration.x || 0,
+      y: acceleration.y || 0,
+      z: acceleration.z || 0,
+    };
+
+    if (!lastMotion) {
+      lastMotion = motion;
+      return;
+    }
+
+    const delta = {
+      x: motion.x - lastMotion.x,
+      y: motion.y - lastMotion.y,
+      z: motion.z - lastMotion.z,
+    };
+    lastMotion = motion;
+
+    const shakeStrength = Math.abs(delta.x) + Math.abs(delta.y) + Math.abs(delta.z);
+    const now = performance.now();
+    if (shakeStrength < 18 || now - lastShakeAt < 120) return;
+
+    lastShakeAt = now;
+    sticker.classList.add("is-device-shaking");
+    stickerTilt.style.setProperty("--shake-x", `${clamp(delta.x * 1.7, -22, 22)}px`);
+    stickerTilt.style.setProperty("--shake-y", `${clamp(delta.y * -1.7, -22, 22)}px`);
+    stickerTilt.style.setProperty("--shake-rotate", `${clamp(delta.x * 1.25, -12, 12)}deg`);
+
+    clearTimeout(resetShakeTimer);
+    resetShakeTimer = setTimeout(resetShake, 170);
+  };
+
+  const enableShake = async () => {
+    if (permissionRequested) return;
+    permissionRequested = true;
+
+    try {
+      if (typeof DeviceMotionEvent.requestPermission === "function") {
+        const permission = await DeviceMotionEvent.requestPermission();
+        if (permission !== "granted") return;
+      }
+
+      window.addEventListener("devicemotion", handleDeviceMotion);
+    } catch {
+      permissionRequested = false;
+    }
+  };
+
+  enableShake();
+  document.addEventListener("pointerdown", enableShake, { once: true });
+}
+
 const countdown = document.querySelector("[data-countdown]");
 
 if (countdown) {

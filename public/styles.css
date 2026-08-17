@@ -236,12 +236,20 @@ h1 span {
   --tilt-x: 0deg;
   --tilt-y: 0deg;
   --tilt-scale: 1;
+  --shake-x: 0px;
+  --shake-y: 0px;
+  --shake-rotate: 0deg;
   position: relative;
-  transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y))
+  transform: perspective(900px) translate3d(var(--shake-x), var(--shake-y), 0)
+    rotate(var(--shake-rotate)) rotateX(var(--tilt-x)) rotateY(var(--tilt-y))
     scale(var(--tilt-scale));
   transform-style: preserve-3d;
-  transition: transform 180ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: transform 160ms cubic-bezier(0.2, 0.7, 0.2, 1);
   will-change: transform;
+}
+
+.sticker.is-device-shaking .sticker-tilt {
+  transition-duration: 80ms;
 }
 
 .sticker-image {
