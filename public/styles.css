@@ -337,6 +337,7 @@ main {
   background: var(--white);
 }
 
+.pag-note,
 .faq-intro,
 .faq-container,
 footer {
@@ -346,8 +347,58 @@ footer {
   padding-right: 32px;
 }
 
+.pag-note {
+  padding-top: clamp(58px, 7vw, 95px);
+  padding-bottom: clamp(58px, 7vw, 95px);
+  display: grid;
+  grid-template-columns: minmax(190px, 0.42fr) minmax(0, 1fr);
+  gap: clamp(34px, 7vw, 96px);
+  border-bottom: 1px solid var(--line-light);
+}
+
+.pag-note-label {
+  padding-top: 13px;
+  border-top: 4px solid var(--orange);
+}
+
+.pag-note-label span {
+  color: var(--orange);
+  font-size: 0.67rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.pag-note-copy {
+  max-width: 900px;
+}
+
+.pag-note-copy h2 {
+  margin: 0 0 18px;
+  color: #777470;
+  font-size: 0.62rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.pag-note-lead {
+  max-width: 780px;
+  margin: 0 0 26px;
+  color: var(--black);
+  font: 760 clamp(1.65rem, 3vw, 3.2rem)/1.02 var(--font);
+  letter-spacing: -0.055em;
+}
+
+.pag-note-text p {
+  margin: 0;
+  color: #5d5a56;
+  font-size: 0.98rem;
+  line-height: 1.68;
+}
+
 .faq-intro {
-  padding-top: clamp(90px, 12vw, 165px);
+  padding-top: clamp(80px, 10vw, 145px);
   padding-bottom: clamp(90px, 12vw, 165px);
   display: grid;
   grid-template-columns: 0.75fr 1.25fr;
@@ -561,12 +612,14 @@ footer {
   animation: answer-in 240ms ease-out both;
 }
 
+.has-motion .pag-note,
 .has-motion .faq-intro,
 .has-motion .faq-section {
   opacity: 0;
   transform: translateY(46px);
 }
 
+.has-motion .pag-note.is-visible,
 .has-motion .faq-intro.is-visible,
 .has-motion .faq-section.is-visible {
   opacity: 1;
@@ -720,11 +773,25 @@ footer > a {
     margin-top: 18px;
   }
 
+  .pag-note,
   .faq-intro,
   .faq-container,
   footer {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .pag-note {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .pag-note-text {
+    grid-template-columns: 1fr;
+  }
+
+  .pag-note-text p:last-child {
+    max-width: none;
   }
 
   .faq-intro {
@@ -770,6 +837,7 @@ footer > a {
     transition-duration: 0.01ms !important;
   }
 
+  .has-motion .pag-note,
   .has-motion .faq-intro,
   .has-motion .faq-section {
     opacity: 1;

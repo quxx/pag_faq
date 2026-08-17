@@ -110,7 +110,7 @@ faqGroups.forEach((group, index) => {
   container.append(section);
 });
 
-const revealElements = document.querySelectorAll(".faq-intro, .faq-section");
+const revealElements = document.querySelectorAll(".pag-note, .faq-intro, .faq-section");
 
 if ("IntersectionObserver" in window) {
   document.documentElement.classList.add("has-motion");

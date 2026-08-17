@@ -72,7 +72,7 @@ export const faqGroups = [
       {
         question: "Was sollte ich unbedingt mitbringen?",
         answer:
-          "Alles, was du fürs Camping brauchst, sowie eine kleine Grundausstattung an Essen und Snacks für zwischendurch.",
+          "Alles, was du fürs Camping brauchst, am besten einen Campingstuhl, sowie eine kleine Grundausstattung an Essen und Snacks für zwischendurch.",
       },
     ],
   },
@@ -178,6 +178,16 @@ export const faqGroups = [
         question: "Welche Regeln gelten auf dem Gelände?",
         answer:
           "Das Festival ist eine private Veranstaltung und wir müssen das Gelände anschließend selbst wieder aufräumen. Achtet deshalb bitte auf eure Umgebung, lasst keinen Müll liegen und behandelt das Gelände so, als wäre es euer eigenes. Wenn jeder mitdenkt, haben wir hinterher deutlich weniger Arbeit.",
+      },
+      {
+        question: "Welche Regeln gibt es für das Miteinander?",
+        answerHtml: `<p>Eigentlich ganz einfach: Seid lieb zueinander und respektiert euch. <br><br>
+          Wir möchten, dass sich beim PAG alle willkommen und wohlfühlen können. Rassistisches, sexistisches, homophobes, transfeindliches oder anderweitig diskriminierendes Verhalten hat bei uns keinen Platz. <br>Das Gleiche gilt für übergriffiges oder respektloses Verhalten.
+          Achtet aufeinander, respektiert persönliche Grenzen und behandelt andere so, wie ihr selbst behandelt werden möchtet. 
+          <br><br>
+          Wenn ihr euch zu irgendeinem Zeitpunkt unwohl fühlt, wendet euch gerne an uns!
+          </p>
+      `,
       },
       {
         question: "Wen kann ich bei Fragen oder im Notfall erreichen?",
