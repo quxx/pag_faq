@@ -21,7 +21,7 @@ export const faqGroups = [
       {
         question: "Wo findet die PAG statt?",
         answerHtml: `
-          <p><a href="https://maps.app.goo.gl/bNxtLkyceHF2axYd9">in Koßwig am Sportplatz.</a></p>
+          <p><a href="https://maps.app.goo.gl/bNxtLkyceHF2axYd9">In Koßwig am Sportplatz.</a></p>
         `,
       },
       {
