@@ -1,5 +1,7 @@
 :root {
-  --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
   --black: #151517;
   --black-soft: #242326;
   --white: #f4f0e7;
@@ -219,7 +221,10 @@ h1 span {
 .sticker::before {
   content: "";
   position: absolute;
-  inset: 7%;
+  top: 7%;
+  right: 7%;
+  left: 7%;
+  aspect-ratio: 1;
   z-index: -1;
   border-radius: 50%;
   background: var(--yellow);
@@ -232,7 +237,8 @@ h1 span {
   --tilt-y: 0deg;
   --tilt-scale: 1;
   position: relative;
-  transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) scale(var(--tilt-scale));
+  transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y))
+    scale(var(--tilt-scale));
   transform-style: preserve-3d;
   transition: transform 180ms cubic-bezier(0.2, 0.7, 0.2, 1);
   will-change: transform;
@@ -248,9 +254,9 @@ h1 span {
 }
 
 .sticker figcaption {
-  position: absolute;
-  right: 2%;
-  bottom: 6%;
+  width: max-content;
+  max-width: 100%;
+  margin: 24px auto 0;
   padding: 11px 15px 11px 12px;
   display: flex;
   align-items: center;
@@ -262,6 +268,7 @@ h1 span {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
   font-size: 0.62rem;
+  line-height: 1;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -444,7 +451,9 @@ footer {
   cursor: pointer;
   list-style: none;
   font: 650 clamp(1rem, 1.45vw, 1.18rem)/1.35 var(--font);
-  transition: color 160ms ease, padding 160ms ease;
+  transition:
+    color 160ms ease,
+    padding 160ms ease;
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -708,8 +717,7 @@ footer > a {
   }
 
   .sticker figcaption {
-    right: 2%;
-    bottom: 4%;
+    margin-top: 18px;
   }
 
   .faq-intro,
