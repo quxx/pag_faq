@@ -42,7 +42,7 @@ export const faqGroups = [
         question: "Gibt es Parkplätze oder Fahrgemeinschaften?",
         answerHtml: `
           <p>Parkplätze gibt es vor Ort, diese sind ausgeschildert. Bitte parkt nur auf den ausgewiesenen Flächen und nicht innerhalb des Ortes.
-          <br>Für Fahrgemeinschaften findet euch in der WhatsApp-Gruppe zusammen.</p>,
+          <br>Für Fahrgemeinschaften findet euch in der WhatsApp-Gruppe zusammen.</p>
       `,
       },
     ],
