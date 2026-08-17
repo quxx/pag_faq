@@ -239,6 +239,16 @@ h1 span {
   --shake-x: 0px;
   --shake-y: 0px;
   --shake-rotate: 0deg;
+  --flummy-x: 54px;
+  --flummy-x-rebound: -39px;
+  --flummy-x-hop: 24px;
+  --flummy-x-settle: -12px;
+  --flummy-x-last: 4px;
+  --flummy-rotate: 18deg;
+  --flummy-rotate-rebound: -12deg;
+  --flummy-rotate-hop: 9deg;
+  --flummy-rotate-settle: -4deg;
+  --flummy-rotate-last: 2deg;
   position: relative;
   transform: perspective(900px) translate3d(var(--shake-x), var(--shake-y), 0)
     rotate(var(--shake-rotate)) rotateX(var(--tilt-x)) rotateY(var(--tilt-y))
@@ -249,7 +259,8 @@ h1 span {
 }
 
 .sticker.is-device-shaking .sticker-tilt {
-  transition-duration: 80ms;
+  animation: sticker-flummy 680ms cubic-bezier(0.18, 0.82, 0.28, 1.12) both;
+  transition-duration: 60ms;
 }
 
 .sticker-image {
@@ -666,6 +677,42 @@ footer {
   }
   50% {
     transform: translateY(-14px) rotate(0.8deg);
+  }
+}
+
+@keyframes sticker-flummy {
+  0% {
+    transform: perspective(900px) translate3d(0, 0, 0) rotate(0deg)
+      rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) scale(var(--tilt-scale));
+  }
+  18% {
+    transform: perspective(900px) translate3d(var(--flummy-x), -46px, 0)
+      rotate(var(--flummy-rotate)) rotateX(var(--tilt-x)) rotateY(var(--tilt-y))
+      scale(1.07);
+  }
+  34% {
+    transform: perspective(900px) translate3d(var(--flummy-x-rebound), 28px, 0)
+      rotate(var(--flummy-rotate-rebound)) rotateX(var(--tilt-x))
+      rotateY(var(--tilt-y)) scale(0.97);
+  }
+  52% {
+    transform: perspective(900px) translate3d(var(--flummy-x-hop), -26px, 0)
+      rotate(var(--flummy-rotate-hop)) rotateX(var(--tilt-x))
+      rotateY(var(--tilt-y)) scale(1.035);
+  }
+  70% {
+    transform: perspective(900px) translate3d(var(--flummy-x-settle), 14px, 0)
+      rotate(var(--flummy-rotate-settle)) rotateX(var(--tilt-x))
+      rotateY(var(--tilt-y)) scale(0.99);
+  }
+  86% {
+    transform: perspective(900px) translate3d(var(--flummy-x-last), -7px, 0)
+      rotate(var(--flummy-rotate-last)) rotateX(var(--tilt-x))
+      rotateY(var(--tilt-y)) scale(1.01);
+  }
+  100% {
+    transform: perspective(900px) translate3d(0, 0, 0) rotate(0deg)
+      rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) scale(var(--tilt-scale));
   }
 }
 

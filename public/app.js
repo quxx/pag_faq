@@ -169,6 +169,16 @@ if (sticker && stickerTilt && !reducedMotion.matches && "DeviceMotionEvent" in w
     stickerTilt.style.removeProperty("--shake-x");
     stickerTilt.style.removeProperty("--shake-y");
     stickerTilt.style.removeProperty("--shake-rotate");
+    stickerTilt.style.removeProperty("--flummy-x");
+    stickerTilt.style.removeProperty("--flummy-x-rebound");
+    stickerTilt.style.removeProperty("--flummy-x-hop");
+    stickerTilt.style.removeProperty("--flummy-x-settle");
+    stickerTilt.style.removeProperty("--flummy-x-last");
+    stickerTilt.style.removeProperty("--flummy-rotate");
+    stickerTilt.style.removeProperty("--flummy-rotate-rebound");
+    stickerTilt.style.removeProperty("--flummy-rotate-hop");
+    stickerTilt.style.removeProperty("--flummy-rotate-settle");
+    stickerTilt.style.removeProperty("--flummy-rotate-last");
   };
 
   const handleDeviceMotion = (event) => {
@@ -195,16 +205,29 @@ if (sticker && stickerTilt && !reducedMotion.matches && "DeviceMotionEvent" in w
 
     const shakeStrength = Math.abs(delta.x) + Math.abs(delta.y) + Math.abs(delta.z);
     const now = performance.now();
-    if (shakeStrength < 18 || now - lastShakeAt < 120) return;
+    if (shakeStrength < 16 || now - lastShakeAt < 260) return;
 
     lastShakeAt = now;
+    const direction = delta.x >= 0 ? 1 : -1;
+    const bounceDistance = clamp(shakeStrength * 3.3, 54, 108) * direction;
+    const bounceRotation = clamp((shakeStrength * 0.9 + Math.abs(delta.x) * 2) * direction, -38, 38);
+
+    sticker.classList.remove("is-device-shaking");
+    void stickerTilt.offsetWidth;
+    stickerTilt.style.setProperty("--flummy-x", `${bounceDistance}px`);
+    stickerTilt.style.setProperty("--flummy-x-rebound", `${bounceDistance * -0.72}px`);
+    stickerTilt.style.setProperty("--flummy-x-hop", `${bounceDistance * 0.44}px`);
+    stickerTilt.style.setProperty("--flummy-x-settle", `${bounceDistance * -0.22}px`);
+    stickerTilt.style.setProperty("--flummy-x-last", `${bounceDistance * 0.08}px`);
+    stickerTilt.style.setProperty("--flummy-rotate", `${bounceRotation}deg`);
+    stickerTilt.style.setProperty("--flummy-rotate-rebound", `${bounceRotation * -0.68}deg`);
+    stickerTilt.style.setProperty("--flummy-rotate-hop", `${bounceRotation * 0.48}deg`);
+    stickerTilt.style.setProperty("--flummy-rotate-settle", `${bounceRotation * -0.24}deg`);
+    stickerTilt.style.setProperty("--flummy-rotate-last", `${bounceRotation * 0.1}deg`);
     sticker.classList.add("is-device-shaking");
-    stickerTilt.style.setProperty("--shake-x", `${clamp(delta.x * 1.7, -22, 22)}px`);
-    stickerTilt.style.setProperty("--shake-y", `${clamp(delta.y * -1.7, -22, 22)}px`);
-    stickerTilt.style.setProperty("--shake-rotate", `${clamp(delta.x * 1.25, -12, 12)}deg`);
 
     clearTimeout(resetShakeTimer);
-    resetShakeTimer = setTimeout(resetShake, 170);
+    resetShakeTimer = setTimeout(resetShake, 720);
   };
 
   const enableShake = async () => {
