@@ -686,6 +686,14 @@ footer > a {
     font-size: clamp(4.3rem, 22vw, 7rem);
   }
 
+  h1 span {
+    color: rgba(244, 240, 231, 0.76);
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    -webkit-text-stroke: 0;
+  }
+
   .hero-location {
     align-items: flex-start;
     flex-direction: column;
