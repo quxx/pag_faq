@@ -160,7 +160,7 @@ export const faqGroups = [
       {
         question: "Darf ich Konfetti mitbringen?",
         answer:
-          "Konfetti lässt sich nur sehr schwer aus der Natur entfernen. Bitte verzichtet daher auf darauf.",
+          "Konfetti lässt sich nur sehr schwer aus der Natur entfernen. Bitte verzichtet daher darauf.",
       },
       {
         question: "Was gilt für Umwelt & Natur?",
