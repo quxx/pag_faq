@@ -6,7 +6,8 @@ export async function onRequest(context) {
   if (
     url.pathname === "/login" ||
     url.pathname === "/logout" ||
-    url.pathname === "/images/pag-2026-round.png"
+    url.pathname === "/robots.txt" ||
+    url.pathname === "/images/disco-login.png"
   ) {
     return context.next();
   }

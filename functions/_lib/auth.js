@@ -77,6 +77,7 @@ export function loginPage({ error = false, misconfigured = false } = {}) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <meta name="theme-color" content="#151517">
+  <meta name="robots" content="noindex, nofollow, noarchive">
   <title>PAG 2026 · Zugang</title>
   <style>
     *{box-sizing:border-box}
@@ -85,7 +86,7 @@ export function loginPage({ error = false, misconfigured = false } = {}) {
     .visual{position:relative;min-width:0;padding:34px;display:flex;flex-direction:column;justify-content:space-between;color:#151517;background:#f25b35;overflow:hidden;isolation:isolate}
     .visual:before{content:"";position:absolute;z-index:-1;width:420px;height:420px;left:-160px;bottom:-230px;border:1px solid rgba(21,21,23,.35);border-radius:50%;box-shadow:0 0 0 55px rgba(255,181,27,.12),0 0 0 110px rgba(21,21,23,.05)}
     .brand{margin:0;font-size:22px;font-weight:850;letter-spacing:-.065em}.brand span{color:#fffdf7}
-    .orb{position:relative;width:min(27vw,270px);aspect-ratio:1;margin:auto;border:5px solid #151517;border-radius:50%;background-image:url('/images/pag-2026-round.png');background-repeat:no-repeat;background-size:440%;background-position:41% 63%;box-shadow:10px 12px 0 #151517;animation:float 5s ease-in-out infinite}
+    .mascot{position:relative;display:block;width:min(31vw,330px);height:auto;margin:auto;filter:drop-shadow(10px 12px 0 #151517);animation:float 5s ease-in-out infinite}
     .visual-meta{margin:0;font-size:10px;font-weight:800;letter-spacing:.14em;line-height:1.55;text-transform:uppercase}
     .access{position:relative;padding:clamp(40px,6vw,70px);display:flex;flex-direction:column;justify-content:center}
     .eyebrow{margin:0 0 23px;display:flex;align-items:center;gap:10px;color:#8d8a84;font-size:10px;font-weight:750;letter-spacing:.16em;text-transform:uppercase}.eyebrow:before{content:"";width:26px;height:2px;background:#f25b35}
@@ -95,15 +96,15 @@ export function loginPage({ error = false, misconfigured = false } = {}) {
     input{width:100%;padding:16px;border:1px solid rgba(244,240,231,.28);border-radius:0;color:#f4f0e7;background:#151517;font:inherit}input:focus{outline:3px solid rgba(242,91,53,.3);border-color:#f25b35}
     button{margin-top:5px;padding:16px;border:0;border-radius:0;color:#151517;background:#f25b35;font:inherit;font-size:14px;font-weight:800;cursor:pointer;transition:background 160ms ease,transform 160ms ease}button:hover{background:#ffb51b;transform:translateY(-1px)}
     @keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-10px) rotate(2deg)}}
-    @media(max-width:760px){body{padding:14px}.card{min-height:0;grid-template-columns:1fr}.visual{min-height:285px;padding:24px}.orb{position:absolute;width:190px;right:30px;top:48px}.access{padding:42px 26px 48px}.visual-meta{margin-top:auto}}
-    @media(prefers-reduced-motion:reduce){.orb{animation:none}}
+    @media(max-width:760px){body{padding:14px}.card{min-height:0;grid-template-columns:1fr}.visual{min-height:285px;padding:24px}.mascot{position:absolute;width:220px;right:12px;top:38px}.access{padding:42px 26px 48px}.visual-meta{margin-top:auto}}
+    @media(prefers-reduced-motion:reduce){.mascot{animation:none}}
   </style>
 </head>
 <body>
   <main class="card">
     <section class="visual" aria-label="PAG 2026">
       <p class="brand">PAG<span>26</span></p>
-      <div class="orb" aria-hidden="true"></div>
+      <img class="mascot" src="/images/disco-login.png" alt="Tanzende PAG-Diskokugel">
     </section>
     <section class="access">
       <p class="eyebrow">Party am Golf</p>

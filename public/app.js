@@ -127,3 +127,79 @@ if ("IntersectionObserver" in window) {
 
   revealElements.forEach((element) => revealObserver.observe(element));
 }
+
+const sticker = document.querySelector(".sticker");
+const stickerTilt = document.querySelector(".sticker-tilt");
+const precisePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+if (sticker && stickerTilt && precisePointer.matches && !reducedMotion.matches) {
+  let animationFrame;
+
+  sticker.addEventListener("pointermove", (event) => {
+    cancelAnimationFrame(animationFrame);
+    animationFrame = requestAnimationFrame(() => {
+      const bounds = sticker.getBoundingClientRect();
+      const horizontal = (event.clientX - bounds.left) / bounds.width - 0.5;
+      const vertical = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+      stickerTilt.style.setProperty("--tilt-x", `${vertical * -8}deg`);
+      stickerTilt.style.setProperty("--tilt-y", `${horizontal * 8}deg`);
+      stickerTilt.style.setProperty("--tilt-scale", "1.025");
+    });
+  });
+
+  sticker.addEventListener("pointerleave", () => {
+    cancelAnimationFrame(animationFrame);
+    stickerTilt.style.removeProperty("--tilt-x");
+    stickerTilt.style.removeProperty("--tilt-y");
+    stickerTilt.style.removeProperty("--tilt-scale");
+  });
+}
+
+const countdown = document.querySelector("[data-countdown]");
+
+if (countdown) {
+  const targetTime = new Date(countdown.dataset.countdown).getTime();
+  const values = countdown.querySelector(".countdown-values");
+  const liveMessage = countdown.querySelector("[data-countdown-live]");
+  const fields = {
+    days: countdown.querySelector("[data-days]"),
+    hours: countdown.querySelector("[data-hours]"),
+    minutes: countdown.querySelector("[data-minutes]"),
+    seconds: countdown.querySelector("[data-seconds]"),
+  };
+
+  let countdownTimer;
+  const updateCountdown = () => {
+    const remaining = targetTime - Date.now();
+
+    if (remaining <= 0) {
+      values.hidden = true;
+      liveMessage.hidden = false;
+      countdown.classList.add("is-live");
+      clearInterval(countdownTimer);
+      return false;
+    }
+
+    const totalSeconds = Math.floor(remaining / 1000);
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    fields.days.textContent = String(days).padStart(2, "0");
+    fields.hours.textContent = String(hours).padStart(2, "0");
+    fields.minutes.textContent = String(minutes).padStart(2, "0");
+    fields.seconds.textContent = String(seconds).padStart(2, "0");
+    countdown.setAttribute(
+      "aria-label",
+      `Noch ${days} Tage, ${hours} Stunden, ${minutes} Minuten und ${seconds} Sekunden bis zur PAG.`,
+    );
+    return true;
+  };
+
+  if (updateCountdown()) {
+    countdownTimer = setInterval(updateCountdown, 1000);
+  }
+}

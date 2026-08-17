@@ -20,18 +20,28 @@ export const faqGroups = [
     items: [
       {
         question: "Wo findet die PAG statt?",
-        answer:
-          "Die genaue Adresse und Hinweise zur Anfahrt ergänzen wir hier.",
+        answerHtml: `
+          <p><a href="https://maps.app.goo.gl/bNxtLkyceHF2axYd9">in Koßwig am Sportplatz.</a></p>
+        `,
       },
       {
         question: "Wann kann ich anreisen?",
-        answer:
-          "Die Anreisezeiten für Freitag und alle Hinweise zur Abreise folgen.",
+        answerHtml: `
+          <p>
+          Wann du möchtest!<br><br>
+
+          Unser legendärer Shuttle-Service vom Bahnhof Calau fährt zu folgenden Zeiten:<br>
+          <strong>Freitag:</strong> 11:45 Uhr & 18:45 Uhr<br>
+          <strong>Samstag:</strong> 12:45 Uhr<br>
+          <strong>Sonntag:</strong> 14:45 Uhr<br><br>
+
+          Für weitere Mitfahrgelegenheiten könnt ihr euch einfach in der WhatsApp-Gruppe austauschen.
+        </p>`,
       },
       {
         question: "Gibt es Parkplätze oder Fahrgemeinschaften?",
         answer:
-          "Informationen zu Parkplätzen, ÖPNV und Fahrgemeinschaften folgen.",
+          "Parkplätze gibt es vor Ort. Für Fahrgemeinschaften findet euch in der WhatsApp-Gruppe zusammen.",
       },
     ],
   },
@@ -42,16 +52,22 @@ export const faqGroups = [
       {
         question: "Kann ich vor Ort übernachten?",
         answer:
-          "Natürlich, du kannst dein Zelt auf dem Sportplatz aufstellen. Auch für deinen Camper ist dort Platz.",
+          "Natürlich! Du kannst dein Zelt ganz einfach auf dem Sportplatz aufstellen. Auch für Camper ist dort ausreichend Platz vorhanden.",
       },
       {
         question: "Gibt es Duschen und Toiletten?",
-        answer: "Es wird eine Außendusche geben. Toiletten sind vorhanden.",
+        answer:
+          "Es wird eine Außendusche geben. Toiletten sind natürlich ebenfalls vorhanden.",
+      },
+      {
+        question: "Gibt es auf dem Campingplatz Strom?",
+        answer:
+          "Wir empfehlen euch unbedingt, eine Powerbank mitzubringen. Auf dem Campingplatz gibt es keine Möglichkeit zum Aufladen.",
       },
       {
         question: "Was sollte ich unbedingt mitbringen?",
         answer:
-          "Alles was du fürs Camping brauchst und eine Grundausrüstung an kleinigkeiten zum essen.",
+          "Alles, was du fürs Camping brauchst, sowie eine kleine Grundausstattung an Essen und Snacks für zwischendurch.",
       },
     ],
   },
@@ -63,9 +79,13 @@ export const faqGroups = [
         question: "Gibt es Essen vor Ort?",
         answerHtml: `
           <p>
-            Am Freitag wird gegrillt. Bitte bring alles, was du dafür brauchst, selbst mit. Holzkohlegrills, Teller und Besteck stehen bereit.<br>
-            Am Samstagmittag geht es zu <a href="https://www.spreewaldbauer-ricken.de/de/mittagstisch/mittagstisch.html">Bauer Ricken</a> (bitte Bargeld mitbringen!). Am Abend folgt ein großes Pizza-Buffet.<br>
-            Außerdem liegen ein paar Snacks für zwischendurch bereit. Bitte bring dir trotzdem noch ein paar Kleinigkeiten mit!
+            Am Freitag wird gegrillt. Bitte bring alles, was du dafür essen möchtest, selbst mit. Holzkohlegrills, Teller und Besteck stellen wir bereit.<br><br>
+
+            Am Samstagmittag geht es um 11:30 Uhr zu
+            <a href="https://www.spreewaldbauer-ricken.de/de/mittagstisch/mittagstisch.html">Bauer Ricken</a>
+            – bitte denkt daran, Bargeld mitzubringen. Am Abend wartet dann ein großes Pizza-Buffet (inkl. Vegatarische und Vegane Optionen) auf euch.<br><br>
+
+            Für zwischendurch stehen ein paar Snacks bereit. Pack dir trotzdem am besten noch ein paar Kleinigkeiten für den kleinen Hunger ein.
           </p>
           `,
       },
@@ -80,7 +100,7 @@ export const faqGroups = [
             <li>Wasser</li>
             <li>Cola & Sprite</li>
             <li>Ein paar Kurze</li>
-            <li>Kaffee & Milch</li>
+            <li>Kaffee, Kuh- und Hafermilch</li>
           </ul>
 
           <p>
@@ -90,7 +110,8 @@ export const faqGroups = [
       },
       {
         question: "Muss ich Becher oder Geschirr mitbringen?",
-        answer: "Informationen zu Mehrwegbechern und Geschirr folgen.",
+        answerHtml: `<p> Wir haben eine Grundausstattung an <strong>Papptellern, Bechern sowie Holzbesteck</strong> (Messer & Gabel) vor Ort. Wenn alle ein bisschen verantwortungsvoll damit umgehen, musst du nichts Weiteres mitbringen. </p>
+          `,
       },
     ],
   },
@@ -99,14 +120,18 @@ export const faqGroups = [
     kicker: "Laut und lange",
     items: [
       {
+        question: "Gehen wir auch baden?",
+        answer:
+          "Ja! Am Samstag gehen wir gemeinsam zum See. Pack deshalb unbedingt Badesachen und ein Handtuch ein.",
+      },
+      {
         question: "Wann kommt das Line-up?",
         answer:
           "Line-up und Timetable veröffentlichen wir hier, sobald alles feststeht.",
       },
       {
         question: "Was passiert bei schlechtem Wetter?",
-        answer:
-          "Unseren Regenplan und passende Ausrüstungstipps ergänzen wir noch.",
+        answer: "Es gibt kein schlechtes Wetter!",
       },
     ],
   },
@@ -115,18 +140,28 @@ export const faqGroups = [
     kicker: "Fair bleiben",
     items: [
       {
-        question: "Darf ich weitere Personen mitbringen?",
+        question: "Darf ich Konfetti oder Glitzer mitbringen?",
         answer:
-          "Die PAG ist privat. Informationen zu zusätzlichen Gästen ergänzen wir hier.",
+          "Konfetti und Glitzer lassen sich nur sehr schwer aus der Natur entfernen und bestehen meistens aus Mikroplastik. Bitte verzichtet daher auf beides.",
+      },
+      {
+        question: "Was gilt für Umwelt & Natur?",
+        answer:
+          "Bitte respektiert Natur und Umwelt auf dem Festivalgelände, auf dem Campingplatz und in der Umgebung. Das bedeutet: keinen Müll, Flaschen oder Zigaretten in den Wald, auf die Wiese oder auf den Gehweg werfen.",
+      },
+      {
+        question: "Darf ich weitere Personen mitbringen?",
+        answer: "Bitte melde dich zuerst bei einem der Organisatoren!",
       },
       {
         question: "Welche Regeln gelten auf dem Gelände?",
         answer:
-          "Regeln zu Glas, Müll, Tieren und gegenseitiger Rücksicht folgen.",
+          "Das Festival ist eine private Veranstaltung und wir müssen das Gelände anschließend selbst wieder aufräumen. Achtet deshalb bitte ein bisschen auf eure Umgebung, lasst keinen Müll liegen und behandelt das Gelände so, als wäre es euer eigenes. Wenn jeder ein bisschen mitdenkt, haben wir hinterher deutlich weniger Arbeit.",
       },
       {
         question: "Wen kann ich bei Fragen oder im Notfall erreichen?",
-        answer: "Kontaktperson und Telefonnummer werden rechtzeitig ergänzt.",
+        answer:
+          "Melde dich in der WhatsApp Gruppe oder schreibe einen der Orga-Leute direkt an.",
       },
     ],
   },

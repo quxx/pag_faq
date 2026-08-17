@@ -148,6 +148,65 @@ h1 span {
   color: var(--muted);
 }
 
+.countdown {
+  max-width: 480px;
+  margin-top: 34px;
+  padding: 17px 0 0;
+  border-top: 1px solid var(--line-dark);
+}
+
+.countdown > p:first-child {
+  margin: 0 0 15px;
+  color: var(--muted);
+  font-size: 0.61rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.countdown-values {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.countdown-values > div {
+  min-width: 0;
+  padding: 10px 9px;
+  border: 1px solid var(--line-dark);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.countdown-values strong,
+.countdown-values span {
+  display: block;
+}
+
+.countdown-values strong {
+  font-size: clamp(1.2rem, 2.2vw, 1.75rem);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.countdown-values span {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.countdown-live {
+  margin: 0;
+  color: var(--yellow);
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  font-weight: 850;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+}
+
 .sticker {
   position: relative;
   width: min(100%, 650px);
@@ -166,6 +225,17 @@ h1 span {
   background: var(--yellow);
   filter: blur(65px);
   opacity: 0.22;
+}
+
+.sticker-tilt {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --tilt-scale: 1;
+  position: relative;
+  transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) scale(var(--tilt-scale));
+  transform-style: preserve-3d;
+  transition: transform 180ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: transform;
 }
 
 .sticker-image {
@@ -687,6 +757,10 @@ footer > a {
   .has-motion .faq-intro,
   .has-motion .faq-section {
     opacity: 1;
+    transform: none;
+  }
+
+  .sticker-tilt {
     transform: none;
   }
 }

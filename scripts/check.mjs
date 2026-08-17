@@ -6,8 +6,10 @@ const requiredFiles = [
   "public/styles.css",
   "public/app.js",
   "public/favicon.svg",
+  "public/robots.txt",
   "public/images/pag-2026.jpg",
   "public/images/pag-2026-round.png",
+  "public/images/disco-login.png",
 ];
 await Promise.all(requiredFiles.map((file) => access(file)));
 
