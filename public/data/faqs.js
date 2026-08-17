@@ -79,11 +79,11 @@ export const faqGroups = [
         question: "Gibt es Essen vor Ort?",
         answerHtml: `
           <p>
-            Am Freitag wird gegrillt. Bitte bring alles, was du dafür essen möchtest, selbst mit. Holzkohlegrills, Teller und Besteck stellen wir bereit.<br><br>
+            Am Freitag wird gegrillt. Bitte bring alles, was du auf dem Grill haben möchtest, selbst mit. Holzkohlegrills, Teller und Besteck stellen wir bereit.<br><br>
 
             Am Samstagmittag geht es um 11:30 Uhr zu
             <a href="https://www.spreewaldbauer-ricken.de/de/mittagstisch/mittagstisch.html">Bauer Ricken</a>
-            – bitte denkt daran, Bargeld mitzubringen. Am Abend wartet dann ein großes Pizza-Buffet (inkl. Vegatarische und Vegane Optionen) auf euch.<br><br>
+            – bitte denkt daran, Bargeld mitzubringen. Am Abend wartet dann ein großes Pizza-Buffet (inkl. Vegetarische und Vegane Optionen) auf euch.<br><br>
 
             Für zwischendurch stehen ein paar Snacks bereit. Pack dir trotzdem am besten noch ein paar Kleinigkeiten für den kleinen Hunger ein.
           </p>
@@ -96,7 +96,7 @@ export const faqGroups = [
 
           <ul>
             <li>Bier</li>
-            <li>Wein & Sekt</li>
+            <li>Weißwein & Sekt</li>
             <li>Wasser</li>
             <li>Cola & Sprite</li>
             <li>Ein paar Kurze</li>
@@ -110,7 +110,7 @@ export const faqGroups = [
       },
       {
         question: "Muss ich Becher oder Geschirr mitbringen?",
-        answerHtml: `<p> Wir haben eine Grundausstattung an <strong>Papptellern, Bechern sowie Holzbesteck</strong> (Messer & Gabel) vor Ort. Wenn alle ein bisschen verantwortungsvoll damit umgehen, musst du nichts Weiteres mitbringen. </p>
+        answerHtml: `<p> Wir haben eine Grundausstattung an <strong>Papptellern, Bechern sowie Holzbesteck</strong> (Messer & Gabel) vor Ort. Wenn alle verantwortungsvoll damit umgehen, musst du nichts Weiteres mitbringen. </p>
           `,
       },
     ],
@@ -122,12 +122,12 @@ export const faqGroups = [
       {
         question: "Gehen wir auch baden?",
         answer:
-          "Ja! Am Samstag gehen wir gemeinsam zum See. Pack deshalb unbedingt Badesachen und ein Handtuch ein.",
+          "Ja! Am Samstag gehen wir gemeinsam zum Bischdorfer See. Pack deshalb unbedingt Badesachen und ein Handtuch ein.",
       },
       {
         question: "Wann kommt das Line-up?",
         answer:
-          "Line-up und Timetable veröffentlichen wir hier, sobald alles feststeht.",
+          "Das bleibt bis zur letzten Minute unser kleines Geheimnis. Lasst euch überraschen! :)",
       },
       {
         question: "Was passiert bei schlechtem Wetter?",
@@ -136,13 +136,29 @@ export const faqGroups = [
     ],
   },
   {
+    title: "Auf- & Abbau",
+    kicker: "Helfende Hände",
+    items: [
+      {
+        question: "Wann beginnt der Aufbau?",
+        answer:
+          "Wir starten am Freitag ab 11:00 Uhr mit dem Aufbau. Wer Zeit und Lust hat, darf gerne schon etwas früher vorbeikommen und mit anpacken.",
+      },
+      {
+        question: "Werden beim Abbau Helfer gebraucht?",
+        answer:
+          "Ja, unbedingt! Am Sonntag freuen wir uns über jede helfende Hand. In den letzten Jahren hat der Abbau leider nicht immer ganz so gut geklappt – deshalb wäre es super, wenn diesmal möglichst viele noch kurz mit anpacken, bevor es nach Hause geht. Gemeinsam sind wir deutlich schneller fertig! 🙌",
+      },
+    ],
+  },
+  {
     title: "Regeln & Kontakt",
     kicker: "Fair bleiben",
     items: [
       {
-        question: "Darf ich Konfetti oder Glitzer mitbringen?",
+        question: "Darf ich Konfetti mitbringen?",
         answer:
-          "Konfetti und Glitzer lassen sich nur sehr schwer aus der Natur entfernen und bestehen meistens aus Mikroplastik. Bitte verzichtet daher auf beides.",
+          "Konfetti lässt sich nur sehr schwer aus der Natur entfernen. Bitte verzichtet daher auf darauf.",
       },
       {
         question: "Was gilt für Umwelt & Natur?",
@@ -156,7 +172,7 @@ export const faqGroups = [
       {
         question: "Welche Regeln gelten auf dem Gelände?",
         answer:
-          "Das Festival ist eine private Veranstaltung und wir müssen das Gelände anschließend selbst wieder aufräumen. Achtet deshalb bitte ein bisschen auf eure Umgebung, lasst keinen Müll liegen und behandelt das Gelände so, als wäre es euer eigenes. Wenn jeder ein bisschen mitdenkt, haben wir hinterher deutlich weniger Arbeit.",
+          "Das Festival ist eine private Veranstaltung und wir müssen das Gelände anschließend selbst wieder aufräumen. Achtet deshalb bitte auf eure Umgebung, lasst keinen Müll liegen und behandelt das Gelände so, als wäre es euer eigenes. Wenn jeder mitdenkt, haben wir hinterher deutlich weniger Arbeit.",
       },
       {
         question: "Wen kann ich bei Fragen oder im Notfall erreichen?",

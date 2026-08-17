@@ -725,7 +725,7 @@ footer > a {
   }
 
   .faq-intro h2 {
-    font-size: clamp(3.6rem, 18vw, 6rem);
+    font-size: clamp(2.9rem, 14vw, 4.5rem);
   }
 
   .faq-section {
