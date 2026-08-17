@@ -19,7 +19,7 @@ export const faqGroups = [
     kicker: "Hin und wieder weg",
     items: [
       {
-        question: "Wo findet die PAG statt?",
+        question: "Wo findet das PAG statt?",
         answerHtml: `
           <p><a href="https://maps.app.goo.gl/bNxtLkyceHF2axYd9">In Koßwig am Sportplatz.</a></p>
         `,
@@ -151,8 +151,15 @@ export const faqGroups = [
       },
       {
         question: "Werden beim Abbau Helfer gebraucht?",
-        answer:
-          "Ja, unbedingt! Am Sonntag freuen wir uns über jede helfende Hand. In den letzten Jahren hat der Abbau leider nicht immer ganz so gut geklappt – deshalb wäre es super, wenn diesmal möglichst viele noch kurz mit anpacken, bevor es nach Hause geht. Gemeinsam sind wir deutlich schneller fertig! 🙌",
+        answerHtml: `
+          <p>
+            Ja, unbedingt! Am Sonntag freuen wir uns über jede helfende Hand.<br><br>
+
+            In den letzten Jahren hat der Abbau leider nicht immer ganz so gut geklappt – deshalb wäre es super, wenn diesmal möglichst viele noch kurz mit anpacken, bevor es nach Hause geht.<br><br>
+
+            Gemeinsam sind wir deutlich schneller fertig!
+          </p>
+        `,
       },
     ],
   },
