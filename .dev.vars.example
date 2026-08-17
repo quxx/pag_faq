@@ -1,0 +1,3 @@
+# Für lokale Cloudflare-Tests nach `.dev.vars` kopieren.
+# `.dev.vars` wird von Git ignoriert und darf das echte Passwort enthalten.
+PAG_PASSWORD="test-passwort"
