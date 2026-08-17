@@ -28,7 +28,7 @@ export const faqGroups = [
         question: "Wann kann ich anreisen?",
         answerHtml: `
           <p>
-          Wann du möchtest!<br><br>
+          Freitag ab 11 Uhr!<br><br>
 
           Unser legendärer Shuttle-Service vom Bahnhof Calau fährt zu folgenden Zeiten:<br>
           <strong>Freitag:</strong> 11:45 Uhr & 18:45 Uhr<br>
@@ -41,8 +41,8 @@ export const faqGroups = [
       {
         question: "Gibt es Parkplätze oder Fahrgemeinschaften?",
         answerHtml: `
-          Parkplätze gibt es vor Ort, diese sind ausgeschildert. Bitte parkt nur auf den ausgewiesenen Flächen und nicht innerhalb des Ortes.
-          <br>Für Fahrgemeinschaften findet euch in der WhatsApp-Gruppe zusammen.,
+          <p>Parkplätze gibt es vor Ort, diese sind ausgeschildert. Bitte parkt nur auf den ausgewiesenen Flächen und nicht innerhalb des Ortes.
+          <br>Für Fahrgemeinschaften findet euch in der WhatsApp-Gruppe zusammen.</p>,
       `,
       },
     ],
