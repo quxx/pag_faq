@@ -46,13 +46,18 @@ export async function isAuthenticated(request, secret) {
   return safeEqual(actual, expected);
 }
 
-export async function createSessionCookie(secret) {
-  const token = await hmac(SESSION_PAYLOAD, secret);
-  return `${COOKIE_NAME}=${token}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=604800`;
+function secureCookieAttribute(requestUrl) {
+  const url = new URL(requestUrl);
+  return url.protocol === "https:" ? "; Secure" : "";
 }
 
-export function clearSessionCookie() {
-  return `${COOKIE_NAME}=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0`;
+export async function createSessionCookie(secret, requestUrl) {
+  const token = await hmac(SESSION_PAYLOAD, secret);
+  return `${COOKIE_NAME}=${token}; Path=/; HttpOnly${secureCookieAttribute(requestUrl)}; SameSite=Lax; Max-Age=604800`;
+}
+
+export function clearSessionCookie(requestUrl) {
+  return `${COOKIE_NAME}=; Path=/; HttpOnly${secureCookieAttribute(requestUrl)}; SameSite=Lax; Max-Age=0`;
 }
 
 export async function verifyPassword(input, secret) {

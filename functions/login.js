@@ -20,7 +20,7 @@ export async function onRequestPost(context) {
       status: 303,
       headers: {
         Location: "/",
-        "Set-Cookie": await createSessionCookie(context.env.PAG_PASSWORD),
+        "Set-Cookie": await createSessionCookie(context.env.PAG_PASSWORD, context.request.url),
         "Cache-Control": "no-store",
       },
     });
