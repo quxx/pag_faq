@@ -800,21 +800,7 @@ footer > a {
   .hero-stage {
     min-height: auto;
     padding: 55px 20px 120px;
-    justify-items: center;
     gap: 60px;
-    text-align: center;
-  }
-
-  .hero-copy {
-    width: 100%;
-    max-width: 560px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .eyebrow {
-    justify-content: center;
   }
 
   h1 {
@@ -829,19 +815,9 @@ footer > a {
     -webkit-text-stroke: 0;
   }
 
-  .hero-intro {
-    margin-right: auto;
-    margin-left: auto;
-  }
-
   .hero-location {
-    width: min(100%, 480px);
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
-  }
-
-  .countdown {
-    width: min(100%, 480px);
   }
 
   .sticker {
