@@ -296,3 +296,94 @@ if (countdown) {
     countdownTimer = setInterval(updateCountdown, 1000);
   }
 }
+
+const weatherWidget = document.querySelector("[data-weather-widget]");
+
+if (weatherWidget) {
+  const weatherUrl = new URL("https://api.open-meteo.com/v1/forecast");
+  weatherUrl.search = new URLSearchParams({
+    latitude: "51.7772",
+    longitude: "14.0295",
+    current: "temperature_2m,weather_code,wind_speed_10m",
+    daily: "weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max",
+    timezone: "Europe/Berlin",
+    forecast_days: "7",
+  });
+
+  const weatherText = new Map([
+    [0, "Sonnig"],
+    [1, "Meist klar"],
+    [2, "Wolkig"],
+    [3, "Bedeckt"],
+    [45, "Nebel"],
+    [48, "Nebel"],
+    [51, "Niesel"],
+    [53, "Niesel"],
+    [55, "Niesel"],
+    [56, "Glatteis"],
+    [57, "Glatteis"],
+    [61, "Regen"],
+    [63, "Regen"],
+    [65, "Starkregen"],
+    [66, "Eisregen"],
+    [67, "Eisregen"],
+    [71, "Schnee"],
+    [73, "Schnee"],
+    [75, "Schnee"],
+    [77, "Schnee"],
+    [80, "Schauer"],
+    [81, "Schauer"],
+    [82, "Starke Schauer"],
+    [85, "Schneeschauer"],
+    [86, "Schneeschauer"],
+    [95, "Gewitter"],
+    [96, "Gewitter"],
+    [99, "Gewitter"],
+  ]);
+
+  const formatDay = new Intl.DateTimeFormat("de-DE", {
+    weekday: "short",
+    timeZone: "Europe/Berlin",
+  });
+  const weatherTemperature = weatherWidget.querySelector("[data-weather-temp]");
+  const weatherSummary = weatherWidget.querySelector("[data-weather-summary]");
+  const weatherDays = weatherWidget.querySelector("[data-weather-days]");
+  const pagDates = new Set(["2026-08-21", "2026-08-22", "2026-08-23"]);
+  const describeWeather = (code) => weatherText.get(code) || "Wetter";
+
+  fetch(weatherUrl)
+    .then((response) => {
+      if (!response.ok) throw new Error("Wetterdaten nicht erreichbar.");
+      return response.json();
+    })
+    .then((data) => {
+      const current = data.current;
+      const daily = data.daily;
+      const dailyDates = daily?.time || [];
+      const selectedDays = dailyDates
+        .map((date, index) => ({ date, index }))
+        .filter(({ date }) => pagDates.has(date))
+        .slice(0, 3);
+
+      if (!current || selectedDays.length === 0) {
+        throw new Error("Wetterdaten unvollständig.");
+      }
+
+      weatherTemperature.textContent = `${Math.round(current.temperature_2m)}°`;
+      weatherSummary.textContent = describeWeather(current.weather_code);
+      weatherDays.replaceChildren(
+        ...selectedDays.map(({ date, index }) => {
+          const day = document.createElement("span");
+          const max = Math.round(daily.temperature_2m_max[index]);
+          const min = Math.round(daily.temperature_2m_min[index]);
+          day.innerHTML = `${formatDay.format(new Date(`${date}T12:00:00+02:00`))}<strong>${max}°/${min}°</strong>`;
+          return day;
+        }),
+      );
+    })
+    .catch(() => {
+      weatherTemperature.textContent = "--°";
+      weatherSummary.textContent = "Nicht verfügbar";
+      weatherDays.replaceChildren();
+    });
+}

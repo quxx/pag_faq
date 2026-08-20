@@ -154,6 +154,102 @@ h1 .hero-year {
   color: var(--muted);
 }
 
+.weather-widget {
+  max-width: 480px;
+  margin-top: 22px;
+  padding: 14px 0 0;
+  border-top: 1px solid var(--line-dark);
+}
+
+.weather-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 18px;
+}
+
+.weather-main p,
+.weather-main div {
+  min-width: 0;
+  margin: 0;
+}
+
+.weather-main p span,
+.weather-main p strong,
+.weather-main div span,
+.weather-main div strong {
+  display: block;
+}
+
+.weather-main p span {
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.58rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.weather-main p strong {
+  color: var(--white-pure);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.weather-main div {
+  text-align: right;
+}
+
+.weather-main div strong {
+  color: var(--yellow);
+  font-size: clamp(1.55rem, 2.7vw, 2.25rem);
+  font-variant-numeric: tabular-nums;
+  font-weight: 850;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+.weather-main div span {
+  margin-top: 8px;
+  color: rgba(244, 240, 231, 0.68);
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.weather-days {
+  margin-top: 13px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.weather-days span {
+  min-width: 0;
+  padding: 9px 8px;
+  border: 1px solid var(--line-dark);
+  color: rgba(244, 240, 231, 0.72);
+  background: rgba(255, 255, 255, 0.025);
+  font-size: 0.58rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.weather-days strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--white-pure);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
 .countdown {
   max-width: 480px;
   margin-top: 34px;
@@ -818,6 +914,14 @@ footer > a {
   .hero-location {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .weather-main {
+    align-items: start;
+  }
+
+  .weather-days {
+    grid-template-columns: 1fr;
   }
 
   .sticker {
