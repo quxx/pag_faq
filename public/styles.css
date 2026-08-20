@@ -920,10 +920,6 @@ footer > a {
     align-items: start;
   }
 
-  .weather-days {
-    grid-template-columns: 1fr;
-  }
-
   .sticker {
     width: min(92vw, 560px);
   }
