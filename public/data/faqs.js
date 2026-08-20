@@ -30,15 +30,33 @@ export const faqGroups = [
           <p>
           Freitag ab 11 Uhr!<br><br>
 
-          Unser legendärer Shuttle-Service vom Bahnhof Calau fährt zu folgenden Zeiten:<br>
-          <strong>Freitag:</strong> 11:45 Uhr & 18:45 Uhr<br>
-          <strong>Samstag:</strong> 12:45 Uhr<br>
-          <strong>Sonntag:</strong> 14:45 Uhr<br><br>
-
           Sinnvoll wäre außerdem eine Anreise nach Vetschau/Spreewald am Samstag zu 11:30 Uhr. Dann könnt ihr euch uns bei Bauer Ricken anschließen.
           <br><br>
 
           Für weitere Mitfahrgelegenheiten könnt ihr euch einfach in der WhatsApp-Gruppe austauschen.
+        </p>`,
+      },
+      {
+        question: "Wann fährt das legendäre PAG-Shuttle?",
+        answerHtml: `
+          <p>
+              <strong>Abholort:</strong>
+              <a href="https://maps.app.goo.gl/ynpCBPrgnxnAGTdv5">Parkplatz am Bahnhof</a>
+              <br><br>
+              <strong>Shuttlezeiten:</strong><br>
+              Freitag: 11:45 Uhr & 18:45 Uhr<br>
+              Samstag: 12:45 Uhr<br>
+              Sonntag: 14:45 Uhr
+              <br><br>
+              <strong>Wichtig:</strong> Zeitgleich findet das Wilde Möhre Festival statt. Auch dafür fahren Shuttles vom Bahnhof Calau ab. Bitte lasst euch davon vor Ort nicht verwirren oder vom falschen Shuttle mitnehmen.
+              <br>
+              Unser Shuttle wartet an dem oben genannten Abholort. Bitte kommt gezielt dorthin.
+              <br><br>
+              <strong>Anmeldung zwingend notwendig</strong>
+              <br>
+              Für die Shuttlefahrten gibt es am Freitag und Samstag jeweils eine Abstimmung in der WhatsApp-Gruppe, über die ihr euch für die Fahrt anmeldet.
+              <br>
+              Bitte stimmt unbedingt ab, wenn ihr das Shuttle nutzen möchtet. Wenn niemand für eine Fahrt angemeldet ist, fährt das Shuttle nicht.
         </p>`,
       },
       {
